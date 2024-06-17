@@ -1,0 +1,18 @@
+.personInfo-container {
+	display: flex;
+	align-items: center;
+	margin: 0.2rem 0;
+}
+
+.person-icon {
+	font-size: 1rem;
+	margin-right: 1rem;
+	display: flex;
+	align-items: center;
+	color: var(--primary);
+}
+
+.person-text {
+	text-transform: capitalize;
+	letter-spacing: var(--letter-spacing);
+}

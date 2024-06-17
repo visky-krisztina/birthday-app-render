@@ -1,0 +1,42 @@
+.displayBirthdays {
+	display: flex;
+	flex-direction: column;
+}
+
+.displayInfo {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1rem;
+	padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.b-icon {
+	width: 15rem;
+}
+
+.birthdayPerson {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: space-around;
+}
+
+@media (min-width: 992px) {
+	.form-center {
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		column-gap: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.displayInfo {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

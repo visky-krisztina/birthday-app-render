@@ -1,0 +1,82 @@
+.person-card {
+	width: 22rem;
+	background: var(--background-secondary-color);
+	border-radius: var(--border-radius);
+	display: grid;
+	grid-template-rows: 1fr auto;
+	box-shadow: var(--shadow-2);
+}
+header {
+	padding: 0.5rem 0.7rem;
+	border-bottom: 1px solid var(--grey-100);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+.main-icon {
+	width: 60px;
+	height: 60px;
+	display: grid;
+	place-items: center;
+	background: var(--primary);
+	border-radius: var(--border-radius);
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--white);
+	margin-right: 1rem;
+}
+
+.info p {
+	margin: 0;
+	text-transform: capitalize;
+	letter-spacing: var(--letter-spacing);
+	color: var(--text-secondary-color);
+}
+
+.name {
+	font-size: 1.7rem;
+	font-weight: 500;
+	margin-bottom: 0.3rem;
+}
+
+.card-content {
+	padding: 1rem 0.5rem;
+}
+.content-center {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.8rem;
+	align-items: start;
+}
+
+.birthdate-style {
+	display: flex;
+	flex-direction: row;
+}
+
+.birthdate-style .icon {
+	font-size: 1rem;
+	margin-right: 0.5rem;
+}
+.birthdate-style h5 {
+	font-size: 1rem;
+}
+.actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.edit-btn,
+.delete-btn {
+	width: 5rem !important;
+	height: 1.3rem !important;
+	font-size: 0.85rem !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: none !important;
+}
+.edit-btn {
+	margin-right: 0.5rem;
+}

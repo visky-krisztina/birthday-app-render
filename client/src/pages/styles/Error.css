@@ -1,0 +1,37 @@
+.error-container {
+	min-height: 100vh;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.error-container img {
+	width: 90vw;
+	max-width: 600px;
+	display: block;
+	margin-bottom: 2rem;
+	margin-top: -3rem;
+}
+h3 {
+	margin-bottom: 0.5rem;
+}
+.error-info p {
+	line-height: 1.5;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	color: var(--text-secondary-color);
+}
+.error-info a {
+	color: var(--white);
+	text-transform: capitalize;
+}
+
+.error-info .btn {
+	padding: 0.5rem;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 1.3em;
+	transform: translateX(-50%);
+}
