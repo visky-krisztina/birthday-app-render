@@ -45,7 +45,7 @@ app.use("*", (req, res) => {
 app.use(errorHandlerMiddleware);
 
 try {
-	await mongoose.connect(process.env.MONGO_URL);
+	await mongoose.connect(process.env.REACT_APP_MONGO_URL);
 	const port = process.env.PORT || 5100;
 	app.listen(port, () => {
 		console.log(`server running on PORT ${port}....`);
