@@ -6,8 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "node server.js",
-		"build": "react-scripts build",
-		"heroku-postbuild": "npm run build"
+		"build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects "
 	},
 	"keywords": [],
 	"author": "",
