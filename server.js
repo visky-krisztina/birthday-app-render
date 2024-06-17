@@ -1,7 +1,7 @@
-import "express-async-errors";
-
 import * as dotenv from "dotenv";
 dotenv.config();
+const cors = require("cors");
+import "express-async-errors";
 
 import express from "express";
 const path = require("path");
@@ -9,6 +9,12 @@ const app = express();
 
 import morgan from "morgan";
 import mongoose from "mongoose";
+
+app.use(
+	cors({
+		origin: "https://main--birthday-app-datavid.netlify.app", // Allow your Netlify domain
+	})
+);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "dist")));
