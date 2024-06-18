@@ -15,14 +15,8 @@ export default defineConfig({
 		},
 	},
 	version: 2,
-	builds: [
-		{
-			src: "package.json",
-			use: "@vercel/static-build",
-			config: {
-				distDir: "build",
-			},
-		},
-	],
+	build: {
+		outDir: "dist",
+	},
 	routes: [{ src: "/(.*)", dest: "/index.html" }],
 });

@@ -16,12 +16,11 @@ app.use(
 	})
 );
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "dist")));
+// Serve static files from the Vite build directory
+app.use(express.static(path.join(__dirname, "client/dist")));
 
-// Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "dist", "index.html"));
+	res.sendFile(path.join(__dirname, "client/dist", "index.html"));
 });
 
 //routers
@@ -51,7 +50,7 @@ app.use("*", (req, res) => {
 app.use(errorHandlerMiddleware);
 
 try {
-	await mongoose.connect(process.env.REACT_APP_MONGO_URL);
+	await mongoose.connect(process.env.REACT_APP_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 	const port = process.env.PORT || 5100;
 	app.listen(port, () => {
 		console.log(`server running on PORT ${port}....`);
