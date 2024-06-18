@@ -3,10 +3,15 @@ dotenv.config();
 
 import express from "express";
 import path from "path";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import "express-async-errors";
+
+// ES module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -25,14 +30,19 @@ if (process.env.NODE_ENV === "development") {
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// Test endpoint
+app.get("/test", (req, res) => {
+	res.json({ msg: "Test endpoint working" });
+});
+
 // Import routes
 import personRouter from "./routes/peopleRoutes.js";
 
-// Serve static files from the Vite build directory
-app.use(express.static(path.join(__dirname, "client/dist")));
-
 // API routes
 app.use("/api/v1/people", personRouter);
+
+// Serve static files from the Vite build directory
+app.use(express.static(path.join(__dirname, "client/dist")));
 
 // Serve the React app for all other routes
 app.get("*", (req, res) => {
