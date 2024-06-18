@@ -4,7 +4,6 @@ dotenv.config();
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import "express-async-errors";
@@ -15,13 +14,6 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Enable CORS for your Netlify domain
-app.use(
-	cors({
-		origin: "https://main--birthday-app-datavid.netlify.app",
-	})
-);
-
 // Use morgan for logging in development
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
@@ -29,11 +21,6 @@ if (process.env.NODE_ENV === "development") {
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
-// Test endpoint
-app.get("/test", (req, res) => {
-	res.json({ msg: "Test endpoint working" });
-});
 
 // Import routes
 import personRouter from "./routes/peopleRoutes.js";
